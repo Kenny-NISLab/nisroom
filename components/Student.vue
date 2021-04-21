@@ -1,6 +1,6 @@
 <template>
   <article class="w-16 md:w-20">
-    <button class="outline" @click="toggleStatus()">
+    <button class="outline" @click="toggleStatus(index)">
       <img
         src="../assets/images/test.jpg"
         alt="test"
@@ -24,25 +24,20 @@ export default {
       required: true,
       default: false,
     },
+    toggleStatus: {
+      type: Function,
+      required: true,
+    },
+    index: {
+      type: Number,
+      required: true,
+    },
   },
   computed: {
     isActive() {
       return {
         'border-green-400': this.status,
       }
-    },
-    localStatus: {
-      get() {
-        return this.status
-      },
-      set(value) {
-        this.$emit('update:status', value)
-      },
-    },
-  },
-  methods: {
-    toggleStatus() {
-      this.localStatus = !this.localStatus
     },
   },
 }
