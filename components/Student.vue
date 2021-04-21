@@ -1,6 +1,6 @@
 <template>
-  <article class="w-16 md:w-20 mx-3 md:mx-10">
-    <button @click="toggleStatus()">
+  <article class="w-16 md:w-20">
+    <button class="outline" @click="toggleStatus()">
       <img
         src="../assets/images/test.jpg"
         alt="test"
@@ -47,3 +47,9 @@ export default {
   },
 }
 </script>
+
+<style lang="postcss" scoped>
+.outline {
+  outline: none;
+}
+</style>

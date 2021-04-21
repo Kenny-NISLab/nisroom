@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <main class="l-main lg:flex lg:items-center">
+    <main class="l-main">
       <Students />
     </main>
   </div>

@@ -1,5 +1,7 @@
 <template>
-  <section class="h-full flex flex-wrap justify-center content-around">
+  <section
+    class="h-full w-full grid grid-cols-4 md:grid-cols-6 items-center justify-items-center"
+  >
     <template v-for="(student, index) in students">
       <Student
         :key="index"
