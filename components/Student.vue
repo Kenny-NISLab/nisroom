@@ -1,5 +1,5 @@
 <template>
-  <article class="w-16 md:w-20">
+  <article class="w-16 md:w-24">
     <button class="outline" @click="toggleStatus(index)">
       <img
         src="../assets/images/test.jpg"
