@@ -4,6 +4,7 @@
     <main class="l-main">
       <Students />
     </main>
+    <Footer />
   </div>
 </template>
 
@@ -13,6 +14,6 @@ export default {}
 
 <style lang="postcss" scoped>
 .l-main {
-  height: calc(100vh - 6rem);
+  height: calc(100vh - 6.5rem);
 }
 </style>
