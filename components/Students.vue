@@ -31,7 +31,7 @@ export default {
   mounted() {
     setInterval(() => {
       this.getData()
-    }, 60 * 60 * 1000)
+    }, 24 * 60 * 60 * 1000)
   },
   methods: {
     getData() {
