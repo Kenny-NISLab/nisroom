@@ -13,6 +13,7 @@
         :toggle-status="toggleStatus"
       />
     </template>
+    <Refresh :get-data="getData" />
   </section>
 </template>
 
@@ -29,9 +30,9 @@ export default {
     this.getData()
   },
   mounted() {
-    // setInterval(() => {
-    //   this.getData()
-    // }, 24 * 60 * 60 * 1000)
+    setInterval(() => {
+      this.getData()
+    }, 60 * 60 * 1000)
   },
   methods: {
     getData() {
