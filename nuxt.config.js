@@ -30,6 +30,7 @@ export default {
         content: '/static/twitter-card.png',
       },
       { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
     ],
     link: [
       {
@@ -131,6 +132,8 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://go.nuxtjs.dev/moment
+    '@nuxtjs/moment',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -161,9 +164,12 @@ export default {
   },
 
   icon: {
-    iconFileName: 'static/manifestIcon.png',
+    iconFileName: '/static/manifestIcon.png',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  moment: {
+    locales: ['ja'],
+  },
 }

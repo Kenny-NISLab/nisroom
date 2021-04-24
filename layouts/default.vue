@@ -27,6 +27,7 @@ export default {
 body {
   height: 100%;
   overflow-y: hidden;
+  overscroll-behavior: none;
 }
 
 .main {
