@@ -53,7 +53,7 @@ export default {
           this.getData()
         })
         .catch((error) => {
-          console.log(error)
+          alert(error)
         })
     },
   },
