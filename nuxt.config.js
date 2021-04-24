@@ -30,6 +30,7 @@ export default {
         content: '/static/twitter-card.png',
       },
       { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
     ],
     link: [
       {
@@ -163,7 +164,7 @@ export default {
   },
 
   icon: {
-    iconFileName: 'static/manifestIcon.png',
+    iconFileName: '/static/manifestIcon.png',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
