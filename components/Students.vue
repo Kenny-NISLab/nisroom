@@ -28,6 +28,11 @@ export default {
   created() {
     this.getData()
   },
+  mounted() {
+    setInterval(() => {
+      this.getData()
+    }, 60 * 60 * 1000)
+  },
   methods: {
     getData() {
       axios
