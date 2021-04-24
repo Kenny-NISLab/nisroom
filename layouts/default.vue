@@ -20,8 +20,7 @@ export default {
 
 <style lang="postcss">
 body {
-  height: 100%;
-  overscroll-behavior: none;
+  height: 100vh;
   overflow-y: hidden;
 }
 
