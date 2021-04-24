@@ -172,4 +172,5 @@ export default {
   moment: {
     locales: ['ja'],
   },
+  loading: '~/components/Loading.vue',
 }
