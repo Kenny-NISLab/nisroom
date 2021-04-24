@@ -25,7 +25,7 @@ export default {
 
 <style lang="postcss">
 body {
-  height: 100vh;
+  height: 100%;
   overflow-y: hidden;
 }
 
