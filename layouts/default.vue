@@ -15,6 +15,11 @@ export default {
       passive: false,
     })
   },
+  methods: {
+    handleTouchMove(event) {
+      event.preventDefault()
+    },
+  },
 }
 </script>
 
