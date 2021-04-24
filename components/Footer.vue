@@ -1,6 +1,6 @@
 <template>
   <footer class="h-6 bg-primary text-center text-white">
-    <p>Updated at {{ updatedTime }}</p>
+    <p class="text-xs leading-loose">Updated at {{ updatedTime }}</p>
   </footer>
 </template>
 
