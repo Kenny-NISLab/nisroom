@@ -4,7 +4,7 @@
       <img
         :src="avater"
         alt="test"
-        class="border-4 rounded-xl border-gray-400"
+        class="border-4 rounded-xl border-gray-400 filter"
         :class="isActive"
       />
     </button>
@@ -45,6 +45,7 @@ export default {
     isActive() {
       return {
         'border-green-400': this.status,
+        isActive: this.status,
       }
     },
   },
@@ -54,5 +55,13 @@ export default {
 <style lang="postcss" scoped>
 .outline {
   outline: none;
+}
+
+.filter {
+  filter: grayscale(100%);
+}
+
+.isActive {
+  filter: grayscale(0);
 }
 </style>
