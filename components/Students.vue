@@ -7,7 +7,7 @@
         :id="student.id"
         :key="index"
         :index="index"
-        :name="student.e_first_name"
+        :name="student.j_last_name + ' ' + student.j_first_name"
         :avater="student.avatar"
         :status.sync="student.is_stay"
         :toggle-status="toggleStatus"
