@@ -1,8 +1,8 @@
 <template>
   <article class="w-16 md:w-24">
-    <button class="outline" @click="toggleStatus(index)">
+    <button class="outline" @click="toggleStatus(id, status)">
       <img
-        src="../assets/images/test.jpg"
+        :src="avater"
         alt="test"
         class="border-4 rounded-xl border-gray-400"
         :class="isActive"
@@ -24,11 +24,19 @@ export default {
       required: true,
       default: false,
     },
+    avater: {
+      type: String,
+      required: true,
+    },
     toggleStatus: {
       type: Function,
       required: true,
     },
     index: {
+      type: Number,
+      required: true,
+    },
+    id: {
       type: Number,
       required: true,
     },

@@ -4,10 +4,12 @@
   >
     <template v-for="(student, index) in students">
       <Student
+        :id="student.id"
         :key="index"
         :index="index"
-        :name="student.name"
-        :status.sync="student.status"
+        :name="student.j_last_name + ' ' + student.j_first_name"
+        :avater="student.avatar"
+        :status.sync="student.is_stay"
         :toggle-status="toggleStatus"
       />
     </template>
@@ -15,24 +17,49 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import { db } from '~/plugins/firebase.js'
+import axios from 'axios'
 
 export default {
-  computed: {
-    ...mapGetters({ students: 'getStudents' }),
+  data() {
+    return {
+      students: [],
+    }
   },
   created() {
-    this.$store.dispatch('setStudentsRef', db.collection('students'))
+    this.getData()
+  },
+  mounted() {
+    setInterval(() => {
+      this.getData()
+    }, 24 * 60 * 60 * 1000)
   },
   methods: {
-    toggleStatus(index) {
-      const name = this.students[index].name
-      const status = {
-        status: !this.students[index].status,
-      }
-      const studentsRef = db.collection('students')
-      studentsRef.doc(name).update(status)
+    getData() {
+      axios
+        .get(process.env.AWS_API_URL + '/students', {
+          headers: { 'x-api-key': process.env.AWS_API_KEY },
+        })
+        .then((res) => {
+          this.students = res.data.Items
+        })
+    },
+    toggleStatus(id, flag) {
+      axios
+        .patch(
+          process.env.AWS_API_URL + '/students/' + id,
+          {
+            is_stay: !flag,
+          },
+          {
+            headers: { 'x-api-key': process.env.AWS_API_KEY },
+          }
+        )
+        .then(() => {
+          this.getData()
+        })
+        .catch((error) => {
+          alert(error)
+        })
     },
   },
 }
