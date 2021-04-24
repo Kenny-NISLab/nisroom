@@ -29,9 +29,9 @@ export default {
     this.getData()
   },
   mounted() {
-    setInterval(() => {
-      this.getData()
-    }, 24 * 60 * 60 * 1000)
+    // setInterval(() => {
+    //   this.getData()
+    // }, 24 * 60 * 60 * 1000)
   },
   methods: {
     getData() {
@@ -42,6 +42,7 @@ export default {
         .then((res) => {
           this.students = res.data.Items
         })
+      this.setUpdatedTime()
     },
     toggleStatus(id, flag) {
       axios
@@ -60,6 +61,9 @@ export default {
         .catch((error) => {
           alert(error)
         })
+    },
+    setUpdatedTime() {
+      this.$store.commit('update', this.$moment().format('MM/DD HH:mm'))
     },
   },
 }
