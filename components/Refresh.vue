@@ -1,6 +1,6 @@
 <template>
   <button
-    class="w-12 h-12 mb-4 rounded-full bg-primary flex justify-center items-center outline transition-all transform hover:-rotate-45 active"
+    class="w-12 h-12 mb-4 rounded-full bg-primary flex justify-center items-center outline transition-all transform active"
     @click="getData"
   >
     <svg
@@ -34,9 +34,10 @@ export default {
 <style lang="postcss" scoped>
 .outline {
   outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .active:active {
-  @apply scale-90;
+  @apply scale-90 -rotate-45;
 }
 </style>
