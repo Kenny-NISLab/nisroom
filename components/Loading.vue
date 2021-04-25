@@ -1,8 +1,8 @@
 <template>
   <div>
-    <transition name="loading">
+    <transition name="pageLoading">
       <div
-        v-show="loading"
+        v-show="pageLoading"
         class="fixed inset-0 bg-white z-10 flex justify-center items-center"
       >
         <img src="../static/twitter-card.png" alt="NISROOM" class="max-h-64" />
@@ -13,16 +13,15 @@
 
 <script>
 export default {
-  name: 'Loading',
   data() {
     return {
-      loading: true,
+      pageLoading: true,
     }
   },
   mounted() {
     window.addEventListener('load', () => {
       setTimeout(() => {
-        this.loading = false
+        this.pageLoading = false
       }, 1500)
     })
   },
@@ -30,11 +29,11 @@ export default {
 </script>
 
 <style scoped>
-.loading-leave-active {
+.pageLoading-leave-active {
   transition: all 0.25s ease-out;
 }
-.loading-enter,
-.loading-leave-to {
+.pageLoading-enter,
+.pageLoading-leave-to {
   opacity: 0;
 }
 </style>
