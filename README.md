@@ -28,5 +28,3 @@ API_URL=
 API_KEY=
 CONSOLE_URL=https://[...]/
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
