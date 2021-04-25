@@ -40,8 +40,8 @@ export default {
   methods: {
     getData() {
       axios
-        .get(process.env.AWS_API_URL + '/students', {
-          headers: { 'x-api-key': process.env.AWS_API_KEY },
+        .get(process.env.API_URL + '/students', {
+          headers: { 'x-api-key': process.env.API_KEY },
         })
         .then((res) => {
           this.students = res.data.Items
@@ -53,12 +53,12 @@ export default {
         this.loading = true
         axios
           .patch(
-            process.env.AWS_API_URL + '/students/' + id,
+            process.env.API_URL + '/students/' + id,
             {
               is_stay: !flag,
             },
             {
-              headers: { 'x-api-key': process.env.AWS_API_KEY },
+              headers: { 'x-api-key': process.env.API_KEY },
             }
           )
           .then(() => {

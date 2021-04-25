@@ -1,6 +1,7 @@
 # NISROOM
 
 ## Overview
+
 NISLAB Room Monitor App
 
 ## Build Setup
@@ -20,12 +21,11 @@ $ yarn start
 $ yarn generate
 ```
 
-
 ## Create `.env` File
 
 ```.env
-AWS_API_URL=
-AWS_API_KEY=
+API_URL=
+API_KEY=
 CONSOLE_URL=https://[...]/
 ```
 
