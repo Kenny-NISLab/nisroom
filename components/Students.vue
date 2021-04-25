@@ -25,12 +25,14 @@ export default {
     return {
       students: [],
       loading: false,
+      url: '',
     }
   },
   created() {
     this.getData()
   },
   mounted() {
+    this.url = window.location.href
     setInterval(() => {
       this.getData()
     }, 60 * 60 * 1000)
@@ -47,24 +49,26 @@ export default {
       this.setUpdatedTime()
     },
     toggleStatus(id, flag) {
-      this.loading = true
-      axios
-        .patch(
-          process.env.AWS_API_URL + '/students/' + id,
-          {
-            is_stay: !flag,
-          },
-          {
-            headers: { 'x-api-key': process.env.AWS_API_KEY },
-          }
-        )
-        .then(() => {
-          this.getData()
-          this.loading = false
-        })
-        .catch((error) => {
-          alert(error)
-        })
+      if (this.url === process.env.CONSOLE_URL) {
+        this.loading = true
+        axios
+          .patch(
+            process.env.AWS_API_URL + '/students/' + id,
+            {
+              is_stay: !flag,
+            },
+            {
+              headers: { 'x-api-key': process.env.AWS_API_KEY },
+            }
+          )
+          .then(() => {
+            this.getData()
+            this.loading = false
+          })
+          .catch((error) => {
+            alert(error)
+          })
+      }
     },
     setUpdatedTime() {
       this.$store.commit('update', this.$moment().format('MM/DD HH:mm'))
