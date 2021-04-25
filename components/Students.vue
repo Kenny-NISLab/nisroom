@@ -13,7 +13,7 @@
         :toggle-status="toggleStatus"
       />
     </template>
-    <Refresh :get-data="getData" />
+    <Refresh :get-data="getData" :loading="loading" />
   </section>
 </template>
 
@@ -24,6 +24,7 @@ export default {
   data() {
     return {
       students: [],
+      loading: false,
     }
   },
   created() {
@@ -46,6 +47,7 @@ export default {
       this.setUpdatedTime()
     },
     toggleStatus(id, flag) {
+      this.loading = true
       axios
         .patch(
           process.env.AWS_API_URL + '/students/' + id,
@@ -58,6 +60,7 @@ export default {
         )
         .then(() => {
           this.getData()
+          this.loading = false
         })
         .catch((error) => {
           alert(error)

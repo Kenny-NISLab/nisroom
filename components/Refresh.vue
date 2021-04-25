@@ -1,6 +1,7 @@
 <template>
   <button
     class="w-12 h-12 mb-4 rounded-full bg-primary flex justify-center items-center outline transition-all transform active"
+    :class="isLoading"
     @click="getData"
   >
     <svg
@@ -27,6 +28,17 @@ export default {
       type: Function,
       required: true,
     },
+    loading: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  computed: {
+    isLoading() {
+      return {
+        isLoading: this.loading,
+      }
+    },
   },
 }
 </script>
@@ -39,5 +51,18 @@ export default {
 
 .active:active {
   @apply scale-90 -rotate-45;
+}
+
+.isLoading {
+  animation: rotate-anime 0.5s linear infinite;
+}
+
+@keyframes rotate-anime {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 </style>
