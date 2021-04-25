@@ -4,6 +4,10 @@
 
 NISLAB Room Monitor App
 
+## Architecture
+
+Coming soon...
+
 ## Build Setup
 
 ```bash
