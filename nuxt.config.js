@@ -142,8 +142,6 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-
-    '@nuxtjs/dotenv',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -173,4 +171,10 @@ export default {
     locales: ['ja'],
   },
   loading: '~/components/Loading.vue',
+
+  publicRuntimeConfig: {
+    apiUrl: process.env.API_URL,
+    apiKey: process.env.API_KEY,
+    consoleUrl: process.env.CONSOLE_URL,
+  },
 }

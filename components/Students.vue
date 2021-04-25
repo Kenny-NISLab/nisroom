@@ -40,8 +40,8 @@ export default {
   methods: {
     getData() {
       axios
-        .get(process.env.API_URL + '/students', {
-          headers: { 'x-api-key': process.env.API_KEY },
+        .get(this.$config.apiUrl + '/students', {
+          headers: { 'x-api-key': this.$config.apiKey },
         })
         .then((res) => {
           this.students = res.data.Items
@@ -49,16 +49,16 @@ export default {
       this.setUpdatedTime()
     },
     toggleStatus(id, flag) {
-      if (!this.url.indexOf(process.env.CONSOLE_URL)) {
+      if (!this.url.indexOf(this.$config.consoleUrl)) {
         this.loading = true
         axios
           .patch(
-            process.env.API_URL + '/students/' + id,
+            this.$config.apiUrl + '/students/' + id,
             {
               is_stay: !flag,
             },
             {
-              headers: { 'x-api-key': process.env.API_KEY },
+              headers: { 'x-api-key': this.$config.apiKey },
             }
           )
           .then(() => {
