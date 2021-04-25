@@ -49,7 +49,7 @@ export default {
       this.setUpdatedTime()
     },
     toggleStatus(id, flag) {
-      if (this.url === process.env.CONSOLE_URL) {
+      if (!this.url.indexOf(process.env.CONSOLE_URL)) {
         this.loading = true
         axios
           .patch(
