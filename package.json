@@ -18,7 +18,6 @@
     "@nuxtjs/pwa": "^3.3.5",
     "axios": "^0.21.1",
     "core-js": "^3.8.3",
-    "firebase": "^8.4.1",
     "nuxt": "^2.14.12",
     "vuexfire": "^3.2.0-alpha.0"
   },

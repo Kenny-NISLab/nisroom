@@ -1,7 +1,7 @@
-# Nuxt.js + Tailwind CSS
+# NISROOM
 
 ## Overview
-Nuxt.jsとTailwindを使ってサクッとプロジェクトを作成したいときに利用するテンプレート
+NISLAB Room Monitor App
 
 ## Build Setup
 
@@ -18,6 +18,15 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+```
+
+
+## Create `.env` File
+
+```.env
+AWS_API_URL=
+AWS_API_KEY=
+CONSOLE_URL=https://[...]/
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
