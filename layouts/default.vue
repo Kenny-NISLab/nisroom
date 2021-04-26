@@ -4,7 +4,7 @@
     <main class="main">
       <Nuxt />
     </main>
-    <Footer />
+    <Footer v-show="!smartLayout" />
   </div>
 </template>
 
@@ -36,7 +36,7 @@ export default {
 
       if (this.vh * 100 < 640) {
         this.smartLayout = true
-        document.documentElement.style.setProperty('--header', `1.5rem`)
+        document.documentElement.style.setProperty('--header', `0rem`)
       } else {
         this.smartLayout = false
         document.documentElement.style.setProperty('--header', `6.5rem`)
