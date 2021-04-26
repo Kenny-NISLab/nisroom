@@ -4,7 +4,7 @@
       <img
         :src="avatar"
         alt="test"
-        class="border-4 rounded-xl border-gray-400 filter"
+        class="border-4 w-16 md:w-24 h-16 md:h-24 rounded-xl border-gray-400 filter"
         :class="isActive"
       />
     </button>
