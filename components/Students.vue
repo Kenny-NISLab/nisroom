@@ -8,7 +8,7 @@
         :key="index"
         :index="index"
         :name="student.j_last_name + ' ' + student.j_first_name"
-        :avater="student.avatar"
+        :avatar="student.avatar"
         :status.sync="student.is_stay"
         :toggle-status="toggleStatus"
       />
@@ -23,7 +23,10 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      students: [],
+      students: Array(23).fill({
+        j_last_name: 'Not',
+        j_first_name: 'Found',
+      }),
       loading: false,
       url: '',
     }
@@ -46,6 +49,7 @@ export default {
         .then((res) => {
           this.students = res.data.Items
         })
+        .catch(() => {})
       this.setUpdatedTime()
     },
     toggleStatus(id, flag) {
