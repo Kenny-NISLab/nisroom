@@ -2,7 +2,7 @@
   <article class="w-16 md:w-24">
     <button class="outline" @click="toggleStatus(id, status)">
       <img
-        :src="avater"
+        :src="avatar"
         alt="test"
         class="border-4 rounded-xl border-gray-400 filter"
         :class="isActive"
@@ -18,15 +18,17 @@ export default {
     name: {
       type: String,
       required: true,
+      default: 'Not Found',
     },
     status: {
       type: Boolean,
       required: true,
       default: false,
     },
-    avater: {
+    avatar: {
       type: String,
       required: true,
+      default: '/_nuxt/assets/images/defaultAvatar.jpg',
     },
     toggleStatus: {
       type: Function,
@@ -35,10 +37,12 @@ export default {
     index: {
       type: Number,
       required: true,
+      default: 0,
     },
     id: {
       type: Number,
       required: true,
+      default: 0,
     },
   },
   computed: {
