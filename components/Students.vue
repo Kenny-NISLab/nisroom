@@ -2,7 +2,7 @@
   <section
     class="h-full w-full grid grid-cols-4 md:grid-cols-6 items-center justify-items-center"
   >
-    <template v-for="(student, index) in students">
+    <template v-for="(student, index) in updatedStudents">
       <Student
         :id="student.id"
         :key="index"
@@ -21,12 +21,23 @@
 import axios from 'axios'
 
 export default {
+  props: {
+    students: {
+      type: Array,
+      required: true,
+      default: () =>
+        Array(23).fill({
+          id: 0,
+          j_last_name: 'Not',
+          j_first_name: 'Found',
+          avatar: '/_nuxt/assets/images/defaultAvatar.jpg',
+          is_stay: false,
+        }),
+    },
+  },
   data() {
     return {
-      students: Array(23).fill({
-        j_last_name: 'Not',
-        j_first_name: 'Found',
-      }),
+      updatedStudents: this.students,
       loading: false,
       url: '',
     }
@@ -47,7 +58,7 @@ export default {
           headers: { 'x-api-key': this.$config.apiKey },
         })
         .then((res) => {
-          this.students = res.data.Items
+          this.updatedStudents = res.data.Items
         })
         .catch(() => {})
       this.setUpdatedTime()
