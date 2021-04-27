@@ -3,7 +3,7 @@
     <button class="outline" @click="toggleStatus(id, status)">
       <img
         :src="avatar"
-        alt="test"
+        :alt="name + 'のプロフィール画像'"
         class="border-4 w-16 md:w-24 h-16 md:h-24 rounded-xl border-gray-400 filter"
         :class="isActive"
       />
