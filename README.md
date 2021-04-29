@@ -2,7 +2,9 @@
 
 ## Overview
 
-NISLAB Room Monitor App
+### NISLAB Room Monitor App
+
+### Serverside is [here](https://github.com/Kenny-NISLab/nisroom-lambda.git)
 
 ## Architecture
 
@@ -18,8 +20,8 @@ $ yarn install
 $ yarn dev
 
 # build for production and launch server
-$ yarn build
-$ yarn start
+# $ yarn build
+# $ yarn start
 
 # generate static project
 $ yarn generate
@@ -37,22 +39,6 @@ CONSOLE_URL=https://[...]/
 
 ### 1. Fork and Clone
 
-### 2. Editing
+### 2. `git remote add upstream https://github.com/Kenny-NISLab/nisroom.git`
 
-```bash
-# watch branches
-$ git branch -a
-
-# set remote repository
-$ git remote add upstream https://github.com/Kenny-NISLab/nisroom.git
-
-# pull repository
-$ git pull upstream main
-
-# commit
-$ git add [FILE]
-$ git commit -m "#[TICKET] [MESSAGES]"
-$ git push origin [BRANCH]
-```
-
-### 3. Pull Request
+### 3. `git pull upstream main`
