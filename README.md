@@ -10,6 +10,10 @@
 
 ![nisroom-architecture](https://user-images.githubusercontent.com/49851726/116017595-06311400-a67b-11eb-872c-be969d7a6fb0.png)
 
+## Preview
+
+![nisroom demo](https://user-images.githubusercontent.com/49851726/116806120-f5ded480-ab65-11eb-8bf3-a22a857bc3a6.gif)
+
 ## Build Setup
 
 ```bash
