@@ -4,7 +4,7 @@
 
 ### NISLAB Room Monitor App
 
-Serverside is [here](https://github.com/Kenny-NISLab/nisroom-api.git)
+Serverside is [here](https://github.com/Kenny-NISLab/nisroom-api)
 
 ## Architecture
 
