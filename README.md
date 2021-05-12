@@ -23,7 +23,6 @@
 ### NISLAB Room Monitor App
 
 Serverside is [![nisroom-api](https://img.shields.io/badge/GitHub-nisroom--api-orange)](https://github.com/Kenny-NISLab/nisroom-api)
-
 
 ## Architecture
 
