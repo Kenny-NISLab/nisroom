@@ -36,6 +36,7 @@
 <div align="center">
 <a href="https://github.com/nkthkr"><img src="https://avatars.githubusercontent.com/u/55532835?v=4" alt="nkthkr" height="120px"></a>
 <a href="https://github.com/kogepanh"><img src="https://avatars.githubusercontent.com/u/49851726?v=4" alt="kogepanh" height="120px"></a>
+<a href="https://github.com/tayoon"><img src="https://avatars.githubusercontent.com/u/52265901?v=4" alt="tayoon" height="120px"></a>
 </div>
 
 ---
