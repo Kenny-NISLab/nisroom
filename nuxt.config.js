@@ -134,6 +134,8 @@ export default {
     '@nuxtjs/tailwindcss',
     // https://go.nuxtjs.dev/moment
     '@nuxtjs/moment',
+    // https://google-analytics.nuxtjs.org
+    '@nuxtjs/google-analytics',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -176,5 +178,8 @@ export default {
     apiUrl: process.env.API_URL,
     apiKey: process.env.API_KEY,
     consoleUrl: process.env.CONSOLE_URL,
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID,
+    },
   },
 }
