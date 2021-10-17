@@ -65,6 +65,9 @@ export default {
           headers: { 'x-api-key': this.$config.apiKey },
         })
         .then((res) => {
+          res.data.Items.sort(function (a, b) {
+            return a.id - b.id
+          })
           this.updatedStudents = res.data.Items
         })
         .catch(() => {})
