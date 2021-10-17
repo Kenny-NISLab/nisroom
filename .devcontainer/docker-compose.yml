@@ -9,3 +9,6 @@ services:
       - ../:/myapp/nisroom:cached
       - /myapp/nisroom/node_modules
       - /myapp/nisroom/.nuxt
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
