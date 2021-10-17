@@ -9,7 +9,9 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "christian-kohler.path-intellisense",
-    "octref.vetur"
+    "octref.vetur",
+    "formulahendry.auto-rename-tag",
+    "coenraads.bracket-pair-colorizer-2"
   ],
   // "forwardPorts": [],
   // "runServices": [],
