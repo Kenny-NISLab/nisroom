@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nisroom:
+    image: node:lts
+    command: sleep infinity
+    ports:
+      - 8080:8080
+    volumes:
+      - ../:/myapp/nisroom:cached
+      - /myapp/nisroom/node_modules
+      - /myapp/nisroom/.nuxt
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
