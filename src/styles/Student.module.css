@@ -1,0 +1,18 @@
+.wrapper {
+  letter-spacing: 0;
+  word-spacing: 0;
+  font-size: 0;
+}
+
+.rotateY {
+  animation: rotateY 0.5s linear 0s;
+}
+
+@keyframes rotateY {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
