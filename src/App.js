@@ -17,7 +17,13 @@ export default function App() {
 
   const { data, error } = useSWR(Consistants.api_baseurl + "/users", fetcher, { refreshInterval: 10000 });
   if (error || !data) {
-    return <>Loading ...</>;
+    return (
+      <div className="h-screen flex items-center">
+        <div className="mx-auto w-[120px]">
+          <img src="/assets/nisroom.png" alt="nisroom" width={1204} height={1220} />
+        </div>
+      </div>
+    );
   }
 
   return (
