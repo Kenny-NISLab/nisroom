@@ -5,7 +5,7 @@
 }
 
 .rotateY {
-  animation: rotateY 0.8s linear 0s;
+  animation: rotateY 0.5s linear 0s;
 }
 
 @keyframes rotateY {

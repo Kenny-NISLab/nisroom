@@ -28,14 +28,14 @@ export default function Student(props) {
       setIsRotate(true);
       setTimeout(function () {
         setIsRotate(false);
-      }, 800);
+      }, 500);
       await patchIsStay(data);
       mutate(Consistants.api_baseurl + "/users/" + data.name);
     } else {
       setIsRotate(true);
       setTimeout(function () {
         setIsRotate(false);
-      }, 60);
+      }, 90);
     }
   }
 
