@@ -3,7 +3,7 @@ import { useState } from "react";
 import useSWR, { useSWRConfig } from "swr";
 import fetcher from "../lib/fetcher";
 import Consistants from "../consistants";
-import Styles from "../styles/student.module.css";
+import Styles from "../styles/Student.module.css";
 
 async function patchIsStay(student) {
   await axios.patch(Consistants.api_baseurl + "/users/" + student.name, {
