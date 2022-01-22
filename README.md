@@ -20,13 +20,6 @@
 <a href="https://github.com/Kenny-NISLab/nisroom"><img src="https://img.shields.io/github/languages/top/Kenny-NISLab/nisroom" alt="languages"></a>
 </div>
 
-<div align="center">
-<a href="https://github.com/Kenny-NISLab/nisroom/blob/main/package.json"><img src="https://shields.io/github/package-json/dependency-version/Kenny-NISLab/nisroom/nuxt" alt="nuxtjs"></a>
-<a href="https://github.com/Kenny-NISLab/nisroom/blob/main/package.json"><img src="https://shields.io/github/package-json/dependency-version/Kenny-NISLab/nisroom/axios" alt="axios"></a>
-<a href="https://github.com/Kenny-NISLab/nisroom/blob/main/package.json"><img src="https://shields.io/github/package-json/dependency-version/Kenny-NISLab/nisroom/core-js" alt="core-js"></a>
-<a href="https://github.com/Kenny-NISLab/nisroom/blob/main/package.json"><img src="https://shields.io/github/package-json/dependency-version/Kenny-NISLab/nisroom/vuexfire" alt="vuexfire"></a>
-</div>
-
 ## <p align="center">Contributors</p>
 
 <div align="center">
@@ -83,28 +76,23 @@
 2. `git remote add upstream https://github.com/Kenny-NISLab/nisroom.git`
 3. `git pull upstream main`
 
-### Build Setup
-
-```bash
-# install dependencies
-$ yarn
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-# $ yarn build
-# $ yarn start
-
-# generate static project
-$ yarn generate
-```
-
 ### Create `.env` File
 
 ```.env
-API_URL="https://[...]"
-API_KEY=""
-CONSOLE_URL="https://[...]/"
-GOOGLE_ANALYTICS_ID=""
+REACT_APP_API_BASEURL=""
+REACT_APP_NISROOM_HOSTNAME=""
+```
+
+### Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+```bash
+# Runs the app in the development mode.\
+#Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+yarn start
+
+#Builds the app for production to the `build` folder.\
+# It correctly bundles React in production mode and optimizes the build for the best performance.
+yarn build
 ```
