@@ -1,8 +1,7 @@
 import Container from "./container";
-import Consistant from "../../consistant";
 
-export default function Footer({ height }) {
-  const footerStyle = { height: height + "px", background: Consistant.theme_color };
+export default function Footer({ windowSize }) {
+  const footerStyle = { height: windowSize.footerHeight + "px", background: "#E28449" };
 
   return (
     <footer style={footerStyle}>
