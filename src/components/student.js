@@ -3,7 +3,7 @@ import { useState } from "react";
 import useSWR, { useSWRConfig } from "swr";
 import fetcher from "../lib/fetcher";
 import Consistants from "../consistants";
-import Styles from "../styles/Student.module.css";
+import Styles from "./student.module.css";
 
 async function patchIsStay(student) {
   await axios.patch(Consistants.api_baseurl + "/users/" + student.name, {
@@ -12,6 +12,7 @@ async function patchIsStay(student) {
 }
 
 export default function Student(props) {
+  // console.log(props.data);
   const studentStyle = { height: props.height + "px" };
 
   const { mutate } = useSWRConfig();

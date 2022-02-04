@@ -1,3 +1,4 @@
+import NisroomWide from "../assets/nisroom-wide";
 import Container from "./container";
 
 export default function Header({ windowSize }) {
@@ -9,7 +10,7 @@ export default function Header({ windowSize }) {
       <Container>
         <div className={`mx-auto ${logoWidth}`}>
           <a href="/">
-            <img src="/assets/nisroom-wide.png" alt="nisroom" width={4090} height={535} className="hover:cursor-pointer" />
+            <NisroomWide />
           </a>
         </div>
       </Container>
