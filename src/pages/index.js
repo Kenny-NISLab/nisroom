@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import useSWR from "swr";
+import axios from "axios";
 
-import fetcher from "../lib/fetcher";
 import Consistants from "../consistants";
 import ReloadButton from "../assets/reload";
 import Nisroom from "../assets/nisroom";
+import Styles from "./index.module.css";
 
 import Container from "../components/container";
 import Header from "../components/header";
@@ -12,16 +12,21 @@ import Footer from "../components/footer";
 import Student from "../components/student";
 
 export default function Index() {
+  const [students, setStudents] = useState([]);
+  const [isRotate, setIsRotate] = useState(false);
+
   useEffect(() => {
     window.addEventListener("touchmove", noScroll, { passive: false }); // スクロール禁止(SP)
     window.addEventListener("mousewheel", noScroll, { passive: false }); // スクロール禁止(PC)});
-  });
+
+    axios.get(Consistants.api_baseurl + "/users").then((response) => {
+      setStudents(response.data);
+    });
+  }, []);
 
   const windowSize = useWindowSize();
 
-  const { data, error } = useSWR(Consistants.api_baseurl + "/users", fetcher);
-
-  if (error || !data) {
+  if (!students.length) {
     return (
       <div className="h-screen flex items-center">
         <div className="mx-auto w-[120px]">
@@ -31,13 +36,27 @@ export default function Index() {
     );
   }
 
+  function onClickReload() {
+    setIsRotate(true);
+    setTimeout(function () {
+      setIsRotate(false);
+    }, 500);
+
+    axios.get(Consistants.api_baseurl + "/users").then((response) => {
+      setStudents(response.data);
+    });
+  }
+
   const studentsHsize = windowSize.height - (windowSize.headerHeight + windowSize.footerHeight);
   const studentsStyle = { height: studentsHsize + "px" };
   const studentHsize = windowSize.isSp ? 4 : 6;
-  const studentHeight = studentsHsize / Math.ceil(data.length / studentHsize);
+  const studentHeight = studentsHsize / Math.ceil(students.length / studentHsize);
   const studentStyle = { height: studentHeight + "px" };
+  const isRotateClass = isRotate ? `${Styles["rotateR"]}` : "";
 
-  const students = data.map((student) => <Student key={student.name} data={student} height={studentHeight} hostname={windowSize.hostname} />);
+  const studentsComponent = students.map((student) => (
+    <Student key={student.name} data={student} height={studentHeight} hostname={windowSize.hostname} />
+  ));
 
   return (
     <>
@@ -45,12 +64,10 @@ export default function Index() {
       <Container>
         <div style={studentsStyle}>
           <div className="grid grid-cols-4 md:grid-cols-6">
-            {students}
+            {studentsComponent}
             <div style={studentStyle} className="flex items-center mx-auto">
-              <div className="w-14 md:w-20 lg:w-24 hover:cursor-pointer">
-                <a href="/">
-                  <ReloadButton />
-                </a>
+              <div className={`w-14 md:w-20 lg:w-24 hover:cursor-pointer ${isRotateClass}`} onClick={onClickReload}>
+                <ReloadButton />
               </div>
             </div>
           </div>
