@@ -27,8 +27,6 @@ export default function Index() {
     });
   }, []);
 
-  console.log(updatedTime);
-
   const windowSize = useWindowSize();
 
   if (!students.length) {
@@ -57,6 +55,14 @@ export default function Index() {
     setUpdatedTime(time);
   }
 
+  function changeStudentIsStay(index, newData) {
+    setStudents(students.map((student, i) => (i === index ? newData : student)));
+
+    axios.patch(Consistants.api_baseurl + "/users/" + newData.name, {
+      isStay: newData.isStay,
+    });
+  }
+
   const studentsHsize = windowSize.height - (windowSize.headerHeight + windowSize.footerHeight);
   const studentsStyle = { height: studentsHsize + "px" };
   const studentHsize = windowSize.isSp ? 4 : 6;
@@ -65,7 +71,15 @@ export default function Index() {
   const isRotateClass = isRotate ? `${Styles["rotateR"]}` : "";
 
   const studentsComponent = students.map((student) => (
-    <Student key={student.name} data={student} height={studentHeight} hostname={windowSize.hostname} changeUpdatedTime={changeUpdatedTime} />
+    <Student
+      key={student.name}
+      index={student.index}
+      student={student}
+      height={studentHeight}
+      hostname={windowSize.hostname}
+      changeUpdatedTime={changeUpdatedTime}
+      changeStudentIsStay={changeStudentIsStay}
+    />
   ));
 
   return (
