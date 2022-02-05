@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 import Consistants from "../consistants";
+import SetTime from "../lib/setTIme";
 import Styles from "./student.module.css";
 
 export default function Student(props) {
@@ -26,6 +27,7 @@ export default function Student(props) {
         setIsRotate(false);
       }, 500);
 
+      props.changeUpdatedTime(SetTime());
       student.isStay = !student.isStay;
       axios.patch(Consistants.api_baseurl + "/users/" + student.name, {
         isStay: student.isStay,

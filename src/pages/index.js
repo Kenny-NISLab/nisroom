@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Consistants from "../consistants";
+import SetTime from "../lib/setTIme";
 import ReloadButton from "../assets/reload";
 import Nisroom from "../assets/nisroom";
 import Styles from "./index.module.css";
@@ -13,6 +14,7 @@ import Student from "../components/student";
 
 export default function Index() {
   const [students, setStudents] = useState([]);
+  const [updatedTime, setUpdatedTime] = useState("");
   const [isRotate, setIsRotate] = useState(false);
 
   useEffect(() => {
@@ -21,8 +23,11 @@ export default function Index() {
 
     axios.get(Consistants.api_baseurl + "/users").then((response) => {
       setStudents(response.data);
+      setUpdatedTime(SetTime());
     });
   }, []);
+
+  console.log(updatedTime);
 
   const windowSize = useWindowSize();
 
@@ -44,7 +49,12 @@ export default function Index() {
 
     axios.get(Consistants.api_baseurl + "/users").then((response) => {
       setStudents(response.data);
+      setUpdatedTime(SetTime());
     });
+  }
+
+  function changeUpdatedTime(time) {
+    setUpdatedTime(time);
   }
 
   const studentsHsize = windowSize.height - (windowSize.headerHeight + windowSize.footerHeight);
@@ -55,12 +65,12 @@ export default function Index() {
   const isRotateClass = isRotate ? `${Styles["rotateR"]}` : "";
 
   const studentsComponent = students.map((student) => (
-    <Student key={student.name} data={student} height={studentHeight} hostname={windowSize.hostname} />
+    <Student key={student.name} data={student} height={studentHeight} hostname={windowSize.hostname} changeUpdatedTime={changeUpdatedTime} />
   ));
 
   return (
     <>
-      <Header windowSize={windowSize} />
+      <Header windowSize={windowSize} updatedTime={updatedTime} />
       <Container>
         <div style={studentsStyle}>
           <div className="grid grid-cols-4 md:grid-cols-6">
@@ -100,7 +110,7 @@ function useWindowSize() {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
-        headerHeight: window.innerWidth < 768 ? 40 : 60,
+        headerHeight: window.innerWidth < 768 ? 60 : 90,
         footerHeight: 28,
         isSp: window.innerWidth < 768,
         hostname: window.location.hostname,

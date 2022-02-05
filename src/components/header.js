@@ -1,7 +1,7 @@
 import NisroomWide from "../assets/nisroom-wide";
 import Container from "./container";
 
-export default function Header({ windowSize }) {
+export default function Header({ windowSize, updatedTime }) {
   const headerStyle = { height: windowSize.headerHeight + "px" };
   const logoWidth = windowSize.isSp ? "w-64" : "w-80";
 
@@ -13,6 +13,7 @@ export default function Header({ windowSize }) {
             <NisroomWide />
           </a>
         </div>
+        <p className="text-center text-xs">Updated at: {updatedTime}</p>
       </Container>
     </header>
   );
