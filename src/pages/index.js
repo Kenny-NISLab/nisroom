@@ -23,8 +23,9 @@ export default function Index() {
 
     axios.get(Consistants.api_baseurl + "/users").then((response) => {
       setStudents(response.data);
-      setUpdatedTime(SetTime());
     });
+
+    changeUpdatedTime();
   }, []);
 
   const windowSize = useWindowSize();
@@ -47,12 +48,13 @@ export default function Index() {
 
     axios.get(Consistants.api_baseurl + "/users").then((response) => {
       setStudents(response.data);
-      setUpdatedTime(SetTime());
     });
+
+    changeUpdatedTime();
   }
 
-  function changeUpdatedTime(time) {
-    setUpdatedTime(time);
+  function changeUpdatedTime() {
+    setUpdatedTime(SetTime());
   }
 
   function changeStudentIsStay(index, newData) {

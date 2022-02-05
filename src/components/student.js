@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import Consistants from "../consistants";
-import SetTime from "../lib/setTIme";
 import Styles from "./student.module.css";
 
 export default function Student(props) {
@@ -20,7 +19,7 @@ export default function Student(props) {
       props.student.isStay = !props.student.isStay;
       props.changeStudentIsStay(props.index, props.student);
 
-      props.changeUpdatedTime(SetTime());
+      props.changeUpdatedTime();
     } else {
       setIsRotate(true);
       setTimeout(function () {
