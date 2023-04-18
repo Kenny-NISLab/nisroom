@@ -89,7 +89,7 @@ export default function Index() {
       <Header windowSize={windowSize} updatedTime={updatedTime} />
       <Container>
         <div style={studentsStyle}>
-          <div className="grid grid-cols-5 md:grid-cols-6">
+          <div className="grid grid-cols-4 md:grid-cols-6">
             {studentsComponent}
             <div style={studentStyle} className="flex items-center mx-auto">
               <div className={`w-14 md:w-20 lg:w-24 hover:cursor-pointer ${isRotateClass}`} onClick={onClickReload}>
