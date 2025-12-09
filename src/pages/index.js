@@ -92,7 +92,7 @@ export default function Index() {
           <div className="grid grid-cols-4 md:grid-cols-6">
             {studentsComponent}
             <div style={studentStyle} className="flex items-center mx-auto">
-              <div className={`w-14 md:w-20 lg:w-24 hover:cursor-pointer ${isRotateClass}`} onClick={onClickReload}>
+              <div className={`w-14 md:w-20 lg:w-24 hover:cursor-pointer ${isRotateClass} mb-[2em]`} onClick={onClickReload}>
                 <ReloadButton />
               </div>
             </div>
