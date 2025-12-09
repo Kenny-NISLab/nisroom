@@ -30,11 +30,10 @@ export default function Student(props) {
 
   return (
     <div style={studentStyle} className="flex items-center mx-auto">
-      <div>
+      <div className="flex flex-col items-center w-full">
         <div
-          className={`border-4 rounded-2xl w-14 md:w-20 lg:w-24 hover:cursor-pointer ${isRotateClass} ${Styles.wrapper} ${
-            props.student.isStay ? " border-emerald-400" : "border-gray-300"
-          }`}
+          className={`border-4 rounded-2xl w-14 md:w-20 lg:w-24 hover:cursor-pointer ${isRotateClass} ${Styles.wrapper} ${props.student.isStay ? " border-emerald-400" : "border-gray-300"
+            }`}
         >
           <img
             src={props.student.avatarImage}
@@ -45,7 +44,9 @@ export default function Student(props) {
             onClick={onClickStudent}
           />
         </div>
-        <p className="text-center text-xs md:text-base">{props.student.name}</p>
+        <p className={`text-center text-xs  md:text-base h-[2em] ${props.student.isStay ? "font-bold" : "opacity-30"}`}>
+          {props.student.name}
+        </p>
       </div>
     </div>
   );

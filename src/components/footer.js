@@ -7,7 +7,7 @@ export default function Footer({ windowSize }) {
     <footer style={footerStyle}>
       <Container>
         <p className="text-center text-white">
-          <small>&copy; 2022 NISLAB.</small>
+          <small>&copy; 2025 NISLAB.</small>
         </p>
       </Container>
     </footer>
